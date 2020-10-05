@@ -1,0 +1,48 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "AtCoderFriends:New Contest",
+      "type": "shell",
+      "command": "bundle exec at_coder_friends setup ${input:contestName}",
+      "problemMatcher": [],
+      "group": "none"
+    },
+    {
+      "label": "AtCoderFriends:Test One",
+      "type": "shell",
+      "command": "bundle exec at_coder_friends test-one ${file}",
+      "problemMatcher": [],
+      "group": "none"
+    },
+    {
+      "label": "AtCoderFriends:Test All",
+      "type": "shell",
+      "command": "bundle exec at_coder_friends test-all ${file}",
+      "problemMatcher": [],
+      "group": "none"
+    },
+    {
+      "label": "AtCoderFriends:Submit",
+      "type": "shell",
+      "command": "bundle exec at_coder_friends submit ${file}",
+      "problemMatcher": [],
+      "group": "none",
+    },
+    {
+      "label": "AtCoderFriends:Check & Go",
+      "type": "shell",
+      "command": "bundle exec at_coder_friends check-and-go ${file}",
+      "problemMatcher": [],
+      "group": "none",
+    },
+  ],
+  "inputs": [
+    {
+      "id": "contestName",
+      "type": "promptString",
+      "default": "",
+      "description": "Contest Name"
+    }
+  ]
+}
