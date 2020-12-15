@@ -1,9 +1,9 @@
-defmodule Atcoder.MixProject do
+defmodule AtcoderSubmissionsElixir.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :atcoder,
+      app: :atcoder_submissions_elixir,
       version: "0.1.0",
       elixir: "~> 1.11",
       start_permanent: Mix.env() == :prod,
