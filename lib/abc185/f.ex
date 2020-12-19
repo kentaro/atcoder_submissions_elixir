@@ -1,4 +1,4 @@
-defmodule <%= @namespace %>.Main do
+defmodule Abc185.F.Main do
   def read_single() do
     IO.read(:line) |> String.trim() |> String.to_integer()
   end
@@ -12,9 +12,8 @@ defmodule <%= @namespace %>.Main do
       |> Enum.reduce([], fn _, acc ->
         list =
           IO.read(:line) |> String.trim() |> String.split(" ") |> Enum.map(&String.to_integer/1)
-        [list | acc]
+        [acc | list]
       end)
-      |> Enum.reverse()
   end
 
   def main() do

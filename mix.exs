@@ -5,7 +5,7 @@ defmodule AtcoderSubmissionsElixir.MixProject do
     [
       app: :atcoder_submissions_elixir,
       version: "0.1.0",
-      elixir: "~> 1.11",
+      elixir: "~> 1.10.2",
       start_permanent: Mix.env() == :prod,
       deps: deps()
     ]
