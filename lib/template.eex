@@ -7,9 +7,8 @@ defmodule <%= @namespace %>.Main do
     IO.read(:line) |> String.trim() |> String.split(" ") |> Enum.map(&String.to_integer/1)
   end
 
-  def read_nested_list() do
-    n = IO.read(:line) |> String.trim() |> String.to_integer()
-    list_of_lists = 1..n
+  def read_nested_list_for(length) do
+    1..length
       |> Enum.reduce([], fn _, acc ->
         list =
           IO.read(:line) |> String.trim() |> String.split(" ") |> Enum.map(&String.to_integer/1)
@@ -18,16 +17,12 @@ defmodule <%= @namespace %>.Main do
   end
 
   def main() do
-    n =
-      IO.read(:line)
-      |> String.trim()
-      |> String.to_integer()
-
-    solve(n)
-    |> IO.puts(n)
+    read_single
+    |> solve
+    |> IO.puts
   end
 
   def solve(n) do
-
+    n
   end
 end
