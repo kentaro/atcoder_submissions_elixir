@@ -1,0 +1,33 @@
+defmodule <%= @namespace %>.Main do
+  def read_single() do
+    IO.read(:line) |> String.trim() |> String.to_integer()
+  end
+
+  def read_list() do
+    IO.read(:line) |> String.trim() |> String.split(" ") |> Enum.map(&String.to_integer/1)
+  end
+
+  def read_nested_list() do
+    n = IO.read(:line) |> String.trim() |> String.to_integer()
+    list_of_lists = 1..n
+      |> Enum.reduce([], fn _, acc ->
+        list =
+          IO.read(:line) |> String.trim() |> String.split(" ") |> Enum.map(&String.to_integer/1)
+        [acc | list]
+      end)
+  end
+
+  def main() do
+    n =
+      IO.read(:line)
+      |> String.trim()
+      |> String.to_integer()
+
+    solve(n)
+    |> IO.puts(n)
+  end
+
+  def solve(n) do
+
+  end
+end

@@ -25,3 +25,6 @@ atcoder_submissions_elixir-*.tar
 
 # Temporary files for e.g. tests
 /tmp
+
+# ex_at_coder
+/cookie.txt
