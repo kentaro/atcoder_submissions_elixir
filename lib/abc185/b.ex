@@ -18,31 +18,27 @@ defmodule Abc185.B.Main do
   end
 
   def main() do
-    [size, times_to_visit, time_to_home] = read_list()
+    [battery_size, times_to_visit, time_to_home] = read_list()
     durations = read_nested_list_for(times_to_visit)
 
-    solve(size, time_to_home, durations)
+    solve(battery_size, time_to_home, durations)
     |> IO.puts()
   end
 
-  def solve(size, time_to_home, durations) do
-    [remaining, prev_time] = Enum.reduce(durations, [size, 0], fn d, [current, prev_time] ->
-      [s, e] = d
-      cond do
-        current <= 0 -> [-1, e]
-        true ->
-          remaining = current - (s - prev_time)
-          cond do
-            remaining <= 0 -> [-1, e]
-            true ->
-              remaining = Enum.min([
-                (current - (s - prev_time) + (e - s)),
-                size
-              ])
-              [remaining, e]
-          end
+  def solve(battery_size, time_to_home, durations) do
+    [remaining_battery_size, prev_time] = Enum.reduce_while(durations, [battery_size, 0], fn duration, [remaining_battery_size, prev_time] ->
+      [start_time, end_time] = duration
+      battery_size_at_start = remaining_battery_size - (start_time - prev_time)
+      if battery_size_at_start <= 0 do
+        {:halt, [battery_size_at_start, end_time]}
+      else
+        remaining_battery_size = Enum.min([
+          (battery_size_at_start + (end_time - start_time)),
+          battery_size
+        ])
+        {:cont, [remaining_battery_size, end_time]}
       end
     end)
-    if remaining - (time_to_home - prev_time) > 0, do: "Yes", else: "No"
+    if remaining_battery_size - (time_to_home - prev_time) > 0, do: "Yes", else: "No"
   end
 end
