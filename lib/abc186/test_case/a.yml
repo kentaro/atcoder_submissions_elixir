@@ -1,0 +1,15 @@
+- name: sample1
+  in: |
+    10 3
+    
+  out: |
+    3
+    
+
+- name: sample2
+  in: |
+    1000 1
+    
+  out: |
+    1000
+    
