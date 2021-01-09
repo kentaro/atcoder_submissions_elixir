@@ -1,0 +1,23 @@
+- name: sample1
+  in: |
+    1
+    
+  out: |
+    1
+    
+
+- name: sample2
+  in: |
+    0
+    
+  out: |
+    0
+    
+
+- name: sample3
+  in: |
+    -1
+    
+  out: |
+    0
+    
