@@ -1,0 +1,15 @@
+- name: sample1
+  in: |
+    abc
+    
+  out: |
+    bca
+    
+
+- name: sample2
+  in: |
+    aab
+    
+  out: |
+    aba
+    
